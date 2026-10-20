@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVibe | Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="announcement">
+    Free shipping on orders over ₹999
+  </div>
+
+  <header class="site-header">
+    <a class="logo" href="#home">Shop<span>Vibe</span></a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav class="navigation" id="navigation">
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <label class="search-box">
+        <input id="searchInput" type="search"
+               placeholder="Search products...">
+      </label>
+
+      <button class="cart-button" id="openCart">
+        🛒 <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">NEW ARRIVALS</p>
+        <h1>Upgrade Your<br>Style Today</h1>
+        <p>
+          Discover the latest trends and shop your
+          favourite looks at great prices.
+        </p>
+        <a href="#products" class="primary-button">
+          Shop Now →
+        </a>
+      </div>
+
+      <div class="hero-image"></div>
+    </section>
+
+    <section class="benefits" id="about">
+      <div>
+        <strong>Free Shipping</strong>
+        <small>On orders over ₹999</small>
+      </div>
+      <div>
+        <strong>Easy Returns</strong>
+        <small>Within 7 days</small>
+      </div>
+      <div>
+        <strong>Secure Payments</strong>
+        <small>Safe shopping experience</small>
+      </div>
+      <div>
+        <strong>24/7 Support</strong>
+        <small>We're here to help</small>
+      </div>
+    </section>
+
+    <section class="category-section" id="categories">
+      <div class="section-heading">
+        <h2>Shop by Category</h2>
+      </div>
+
+      <div class="category-list" id="categoryList">
+        <button class="category-chip active"
+                data-category="All">All</button>
+        <button class="category-chip"
+                data-category="Fashion">Fashion</button>
+        <button class="category-chip"
+                data-category="Tech">Tech</button>
+        <button class="category-chip"
+                data-category="Bags">Bags</button>
+        <button class="category-chip"
+                data-category="Lifestyle">Lifestyle</button>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <h2>Featured Products</h2>
+        <span id="resultCount">8 products</span>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <p class="empty-state" id="emptyState" hidden>
+        No products found.
+      </p>
+    </section>
+
+    <section class="newsletter" id="contact">
+      <div>
+        <h2>Stay in the Loop</h2>
+        <p>Subscribe for new arrivals and special offers.</p>
+      </div>
+
+      <form id="newsletterForm" class="newsletter-form">
+        <input id="emailInput" type="email"
+               placeholder="Your email address" required>
+        <button class="primary-button" type="submit">
+          Subscribe
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <a class="logo" href="#home">Shop<span>Vibe</span></a>
+      <p>Better Products. Better Vibes.</p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#categories">Categories</a>
+    </div>
+
+    <div>
+      <h3>Customer Service</h3>
+      <a href="#contact">Contact</a>
+      <a href="#about">Shipping & Returns</a>
+    </div>
+
+    <p class="copyright">
+      © 2026 ShopVibe. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Shopping cart drawer -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+
+  <aside class="cart-drawer" id="cartDrawer"
+        aria-hidden="true">
+
+    <div class="cart-header">
+      <h2>Your Cart <span id="drawerCount">(0)</span></h2>
+      <button class="icon-button" id="closeCart">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-empty" id="cartEmpty">
+      <h3>Your cart is empty</h3>
+      <p>Add your favourite products to get started.</p>
+      <button class="primary-button" id="continueShopping">
+        Continue Shopping
+      </button>
+    </div>
+
+    <div class="cart-summary" id="cartSummary">
+      <div>
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">₹0</strong>
+      </div>
+
+      <button class="primary-button checkout-button"
+              id="checkoutButton">
+        Continue to Checkout
+      </button>
+
+      <button class="text-button" id="clearCart">
+        Clear Cart
+      </button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <section class="checkout-modal" role="dialog"
+             aria-modal="true">
+      <button class="icon-button modal-close"
+              id="closeModal">✕</button>
+      <h2>Thank You!</h2>
+      <p>This is a demo checkout. No real payment is processed.</p>
+      <button class="primary-button" id="finishCheckout">
+        Continue Shopping
+      </button>
+    </section>
+  </div>
+
+</body>
+</html>
